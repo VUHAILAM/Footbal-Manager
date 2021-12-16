@@ -8,12 +8,12 @@ namespace FootbalManager.Models
 {
     public class LoginDao
     {
-        DataProvider dp = new DataProvider();
+        
 
         public Entities.Accout Login(string account, string password)
         {
             string sql = "Select * from Account where account='"+account+"' and password='"+password+"'";
-            DataTable dt = dp.executeQuery(sql);
+            DataTable dt = DataProvider.executeQuery(sql);
             if(dt.Rows.Count > 0)
             {
                 DataRow r = dt.Rows[0];

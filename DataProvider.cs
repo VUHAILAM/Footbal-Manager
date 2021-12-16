@@ -16,16 +16,16 @@ namespace FootbalManager
     public class DataProvider
     {
         //Khai bao cac thanh phan ket noi va xu ly DB
-        SqlConnection cnn; //Ket noi DB
-        SqlDataAdapter da; //Xu ly cac cau lenh SQL: Select
-        SqlCommand cmd; //Thuc thi cau lenh insert,update,delete
+        static SqlConnection cnn; //Ket noi DB
+        static SqlDataAdapter da; //Xu ly cac cau lenh SQL: Select
+        static SqlCommand cmd; //Thuc thi cau lenh insert,update,delete
 
         public DataProvider()
         {
             connect();
         }
 
-        private void connect()
+        private static void connect()
         {
             try
             {
@@ -45,8 +45,9 @@ namespace FootbalManager
         }
 
         //Hàm execute 1 câu lệnh select
-        public DataTable executeQuery(string strSelect)
+        public static DataTable executeQuery(string strSelect)
         {
+            connect();
             DataTable dt = new DataTable();
             try
             {
@@ -61,8 +62,9 @@ namespace FootbalManager
         }
 
         //Hàm execute câu lệnh insert,update,delete
-        public bool executeNonQuery(string strSQL)
+        public static bool executeNonQuery(string strSQL)
         {
+            connect();
             try
             {
                 cmd = cnn.CreateCommand();
@@ -78,11 +80,11 @@ namespace FootbalManager
             return true;
         }
 
-        public DataTable GetDataTable(SqlCommand cmd)
+        public static DataTable GetDataTable(SqlCommand cmd)
         {
             try
             {
-
+                connect();
 
 
                 cmd.Connection = cnn;
@@ -99,18 +101,17 @@ namespace FootbalManager
             }
         }
 
-        public void UpdateTable(SqlCommand cmd)
+        public static void UpdateTable(SqlCommand cmd)
         {
             try
             {
-
+                connect();
 
 
                 cmd.Connection = cnn;
 
-                cnn.Open();
                 cmd.ExecuteNonQuery();
-                cnn.Close();
+                
             }
             catch (Exception ex)
             {
