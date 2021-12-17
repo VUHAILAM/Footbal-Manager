@@ -61,24 +61,59 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="View\FundInfo.aspx" />
+    <Content Include="View\Home.aspx" />
     <Content Include="View\images\login.png" />
     <Content Include="View\Login.aspx" />
+    <Content Include="View\MemberDetail.aspx" />
+    <Content Include="View\TeamInfo.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckData.cs" />
     <Compile Include="Controller\LoginController.cs" />
+    <Compile Include="DAO.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="Entities\Accout.cs" />
     <Compile Include="Entities\Coach.cs" />
     <Compile Include="Entities\Player.cs" />
+    <Compile Include="Models\HomeDao.cs" />
     <Compile Include="Models\LoginDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\FundInfo.aspx.cs">
+      <DependentUpon>FundInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\FundInfo.aspx.designer.cs">
+      <DependentUpon>FundInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\MemberDetail.aspx.cs">
+      <DependentUpon>MemberDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\MemberDetail.aspx.designer.cs">
+      <DependentUpon>MemberDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\TeamInfo.aspx.cs">
+      <DependentUpon>TeamInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\TeamInfo.aspx.designer.cs">
+      <DependentUpon>TeamInfo.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

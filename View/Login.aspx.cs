@@ -33,7 +33,7 @@ namespace FootbalManager.View
             } else
             {
                 Response.Write("<script>alert('Login successful')</script>");
-                Response.Redirect("");
+                Response.Redirect("/View/Home.aspx");
             }
         }
 
